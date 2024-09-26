@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Opgave 4: Refleksspil</title>
+		<link rel="stylesheet" href="style/style.css" />
+		<script src="js/opg-a-refleksspil.js" defer></script>
+		<!-- <script src="opg-a-refleksspil.js" defer></script> -->
+	</head>
+	<body>
+		<div id="spil_container">
+			<div id="resultat_omraade">
+				<h1>Refleksspil</h1>
+				<h2>Spilstatus</h2>
+				<p>Hurtigste tid: <span id="hurtigste_tid">0</span> ms</p>
+				<p>Langsomste tid: <span id="langsomste_tid">0</span> ms</p>
+				<p>Resterende forsøg: <span id="runde_tæller">10</span> ud af 10</p>
+			</div>
+
+			<div id="knap_omraade">
+				<button class="target_btn" disabled>
+					<span>GAME ON</span>
+				</button>
+			</div>
+		</div>
+
+		<div id="gennemsnit_modal" class="modal">
+			<div class="modal_content">
+				<p id="gennemsnit_besked"></p>
+				<button id="genstart_knap">Genstart Spil</button>
+			</div>
+		</div>
+
+		<div id="start_modal" class="modal">
+			<div class="modal_content">
+				<h2>Velkommen til Refleksspil!</h2>
+				<button id="start_knap">Start Spil</button>
+			</div>
+		</div>
+
+		<div id="nedtælling_modal" class="modal">
+			<div class="modal_content">
+				<h2 id="nedtælling_tal">3</h2>
+			</div>
+		</div>
+	</body>
+</html>

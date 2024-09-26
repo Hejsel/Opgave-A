@@ -1,0 +1,135 @@
+.target_btn {
+	position: absolute;
+	height: 100px;
+	padding: 0 10px;
+	border: 2px solid #000;
+	background: #f14c4c;
+	user-select: none;
+	white-space: nowrap;
+	transition: all 0.5s ease; /* Juster varigheden her */
+	font-family: inherit;
+	opacity: 1; /* Start med fuld synlighed */
+}
+
+.target_btn:before,
+.target_btn:after {
+	content: '';
+	position: absolute;
+	background: #f14c4c;
+	transition: all 0.2s linear;
+}
+
+.target_btn:before {
+	width: calc(100% + 6px);
+	height: calc(100% - 16px);
+	top: 8px;
+	left: -3px;
+}
+
+.target_btn:after {
+	width: calc(100% - 16px);
+	height: calc(100% + 6px);
+	top: -3px;
+	left: 8px;
+}
+
+button:hover {
+	cursor: crosshair;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:hover:before {
+	height: calc(100% - 32px);
+	top: 16px;
+}
+
+button:hover:after {
+	width: calc(100% - 32px);
+	left: 16px;
+}
+
+button span {
+	font-size: 15px;
+	z-index: 3;
+	position: relative;
+	font-weight: 600;
+}
+
+/* --------------------------------------*/
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Container der dækker hele siden lodret */
+#spil_container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+}
+
+/* Knapområdet bruger 2/3 af vinduets højde */
+#knap_omraade {
+	flex: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+/* Resultatområdet bruger 1/3 af vinduets højde */
+#resultat_omraade {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid #000;
+	background-color: darkgrey;
+}
+
+/********************************************/
+
+.modal {
+	display: none; /* Skjult som standard */
+	position: fixed; /* Blokerer for scrolling */
+	z-index: 99; /* Vis den ovenfor */
+	left: 0;
+	top: 0;
+	width: 100%; /* Dækker hele skærmen */
+	height: 100%; /* Dækker hele skærmen */
+	overflow: auto; /* Hvis nødvendigt, tillad scrolling */
+	background-color: rgb(0, 0, 0); /* Sort baggrund */
+	background-color: rgba(0, 0, 0, 0.4); /* Sort med transparens */
+}
+
+.modal_content {
+	background-color: #fefefe;
+	margin: 15% auto; /* Center det */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 40%; /* Bredde */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
